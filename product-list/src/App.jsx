@@ -1,4 +1,5 @@
 import "./App.css";
+import Categories from "./components/Categories";
 import HeroSection from "./components/HeroSection";
 import NavBar from "./components/NavBar";
 
@@ -11,6 +12,8 @@ function App() {
 
       <main>
         <HeroSection />
+
+        <Categories />
       </main>
     </>
   );
