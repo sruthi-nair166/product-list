@@ -24,47 +24,70 @@ function Categories() {
       </div>
 
       <div className="grid grid-cols-5 gap-7 mt-5">
-        <button className="relative rounded-xl overflow-hidden transition">
+        <button
+          type="button"
+          className="relative rounded-xl overflow-hidden transition"
+        >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
             src="/electronics.jpg"
-            alt="electronics category"
+            alt="electronics & gadgets category"
           />
-          <span className="absolute left-3 bottom-3 category-tag">
-            Electronics
+          <span className="absolute left-3 top-3 category-tag">
+            Electronics & Gadgets
           </span>
         </button>
-        <button className="relative rounded-xl overflow-hidden transition">
+        <button
+          type="button"
+          className="relative rounded-xl overflow-hidden transition"
+        >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
             src="/fashion.png"
-            alt="fashion category"
+            alt="fashion & apparel category"
           />
-          <span className="absolute left-3 bottom-3 category-tag">Fashion</span>
+          <span className="absolute left-3 top-3 category-tag">
+            Fashion & Apparel
+          </span>
         </button>
-        <button className="relative rounded-xl overflow-hidden transition">
+        <button
+          type="button"
+          className="relative rounded-xl overflow-hidden transition"
+        >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
             src="/beauty.jpg"
-            alt="beauty category"
+            alt="beauty & personal care category"
           />
-          <span className="absolute left-3 bottom-3 category-tag">Beauty</span>
+          <span className="absolute left-3 top-3 category-tag">
+            Beauty & Personal Care
+          </span>
         </button>
-        <button className="relative rounded-xl overflow-hidden transition">
+        <button
+          type="button"
+          className="relative rounded-xl overflow-hidden transition"
+        >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
             src="/kitchen.png"
-            alt="kitchen category"
+            alt="home & kitchen category"
           />
-          <span className="absolute left-3 bottom-3 category-tag">Kitchen</span>
+          <span className="absolute left-3 top-3 category-tag">
+            Home & Kitchen
+          </span>
         </button>
-        <button className="relative rounded-xl overflow-hidden transition">
+        <button
+          type="button"
+          className="relative rounded-xl overflow-hidden transition"
+        >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
             src="/fitness.png"
-            alt="fitness category"
+            alt="health & fitness category"
           />
-          <span className="absolute left-3 bottom-3 category-tag">Fitness</span>
+          <span className="absolute left-3 top-3 category-tag">
+            Health & Fitness
+          </span>
         </button>
       </div>
     </div>
