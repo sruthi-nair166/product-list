@@ -14,11 +14,11 @@
 
 ### Links
 
-Live Site: []()
+Live Site: [https://sruthi-nair166.github.io/product-list/](https://sruthi-nair166.github.io/product-list/)
 
 ### Screenshots
 
-<img src="./public/screenshot.png" alt="hero section desktop" style="border: 1px solid grey">
+<img src="/public/screenshot.png" alt="hero section desktop" style="border: 1px solid grey">
 
 ### Overview
 
