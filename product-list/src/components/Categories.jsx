@@ -1,4 +1,4 @@
-function Categories() {
+function Categories({ filter }) {
   return (
     <div id="popular" className="px-12 py-10">
       <div className="flex items-center justify-between">
@@ -24,8 +24,9 @@ function Categories() {
       </div>
 
       <div className="grid grid-cols-5 gap-7 mt-5">
-        <button
-          type="button"
+        <a
+          href="#products"
+          onClick={() => filter("Electronics & Gadgets")}
           className="relative rounded-xl overflow-hidden transition"
         >
           <img
@@ -36,9 +37,10 @@ function Categories() {
           <span className="absolute left-3 top-3 category-tag">
             Electronics & Gadgets
           </span>
-        </button>
-        <button
-          type="button"
+        </a>
+        <a
+          href="#products"
+          onClick={() => filter("Fashion & Apparel")}
           className="relative rounded-xl overflow-hidden transition"
         >
           <img
@@ -49,9 +51,10 @@ function Categories() {
           <span className="absolute left-3 top-3 category-tag">
             Fashion & Apparel
           </span>
-        </button>
-        <button
-          type="button"
+        </a>
+        <a
+          href="#products"
+          onClick={() => filter("Beauty & Personal Care")}
           className="relative rounded-xl overflow-hidden transition"
         >
           <img
@@ -62,9 +65,10 @@ function Categories() {
           <span className="absolute left-3 top-3 category-tag">
             Beauty & Personal Care
           </span>
-        </button>
-        <button
-          type="button"
+        </a>
+        <a
+          href="#products"
+          onClick={() => filter("Home & Kitchen")}
           className="relative rounded-xl overflow-hidden transition"
         >
           <img
@@ -75,9 +79,10 @@ function Categories() {
           <span className="absolute left-3 top-3 category-tag">
             Home & Kitchen
           </span>
-        </button>
-        <button
-          type="button"
+        </a>
+        <a
+          href="#products"
+          onClick={() => filter("Health & Fitness")}
           className="relative rounded-xl overflow-hidden transition"
         >
           <img
@@ -88,7 +93,7 @@ function Categories() {
           <span className="absolute left-3 top-3 category-tag">
             Health & Fitness
           </span>
-        </button>
+        </a>
       </div>
     </div>
   );

@@ -1,16 +1,22 @@
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 
-function Products({ products }) {
+function Products({ products, filter, filteredProducts }) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isSortByOpen, setIsSortByOpen] = useState(false);
   const [isPriceOpen, setIsPriceOpen] = useState(false);
   const [isRatingOpen, setIsRatingOpen] = useState(false);
 
+  console.log(filteredProducts);
+
   return (
-    <div id="deals" className="px-12 py-6">
+    <div id="products" className="px-12 py-6">
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-xl font-medium pb-4">Top Deals</h2>
+        <h2 className="text-xl font-medium pb-8">
+          {filteredProducts.length
+            ? filteredProducts[0]?.category
+            : "Top Deals"}
+        </h2>
 
         <div className="flex gap-3 pb-4">
           <div className="relative">
@@ -66,32 +72,74 @@ function Products({ products }) {
               <div className="absolute end-0 z-10 border-2 rounded-lg bg-white">
                 <ul className="flex flex-col items-start w-52">
                   <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
-                    <button className="w-full text-left" type="button">
+                    <button
+                      onClick={() => {
+                        setIsFilterOpen(false);
+                        filter("");
+                      }}
+                      className="w-full text-left"
+                      type="button"
+                    >
                       All
                     </button>
                   </li>
                   <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
-                    <button className="w-full text-left" type="button">
+                    <button
+                      onClick={() => {
+                        setIsFilterOpen(false);
+                        filter("Electronics & Gadgets");
+                      }}
+                      className="w-full text-left"
+                      type="button"
+                    >
                       Electronics & Gadgets
                     </button>
                   </li>
                   <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
-                    <button className="w-full text-left" type="button">
+                    <button
+                      onClick={() => {
+                        setIsFilterOpen(false);
+                        filter("Fashion & Apparel");
+                      }}
+                      className="w-full text-left"
+                      type="button"
+                    >
                       Fashion & Apparel
                     </button>
                   </li>
                   <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
-                    <button className="w-full text-left" type="button">
+                    <button
+                      onClick={() => {
+                        setIsFilterOpen(false);
+                        filter("Beauty & Personal Care");
+                      }}
+                      className="w-full text-left"
+                      type="button"
+                    >
                       Beauty & Personal Care
                     </button>
                   </li>
                   <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
-                    <button className="w-full text-left" type="button">
+                    <button
+                      onClick={() => {
+                        setIsFilterOpen(false);
+                        filter("Home & Kitchen");
+                      }}
+                      className="w-full text-left"
+                      type="button"
+                    >
                       Home & Kitchen
                     </button>
                   </li>
                   <li className="hover:bg-slate-200 transition w-full px-4 py-2">
-                    <button className="w-full text-left" type="button">
+                    <button
+                      onClick={() => {
+                        setIsFilterOpen(false);
+                        filter("Health & Fitness");
+                      }}
+                      className="w-full text-left"
+                      type="button"
+                    >
                       Health & Fitness
                     </button>
                   </li>
@@ -206,11 +254,21 @@ function Products({ products }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-6">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      {!filteredProducts.length && (
+        <div className="grid grid-cols-4 gap-6">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
+
+      {filteredProducts.length && (
+        <div className="grid grid-cols-4 gap-6">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

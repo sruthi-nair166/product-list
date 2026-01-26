@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Categories from "./components/Categories";
 import HeroSection from "./components/HeroSection";
@@ -129,6 +130,18 @@ const products = [
 ];
 
 function App() {
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  function filter(value) {
+    setFilteredProducts([]);
+    products.filter((product) => {
+      if (product.category === value) {
+        setFilteredProducts((prev) => [...prev, product]);
+        console.log(filteredProducts);
+      }
+    });
+  }
+
   return (
     <>
       <header>
@@ -137,8 +150,12 @@ function App() {
 
       <main>
         <HeroSection />
-        <Categories />
-        <Products products={products} />
+        <Categories filter={filter} />
+        <Products
+          products={products}
+          filter={filter}
+          filteredProducts={filteredProducts}
+        />
       </main>
 
       <footer>

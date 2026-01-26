@@ -8,12 +8,12 @@ function HeroSection() {
         Browse top-rated items, explore categories, and find the best deals in
         one place.
       </p>
-      <button
-        type="button"
+      <a
+        href="#products"
         className="bg-black hover:bg-black-700 text-white rounded-full px-5 pt-2 pb-2.5"
       >
         <span>Explore Products</span>
-      </button>
+      </a>
     </div>
   );
 }
