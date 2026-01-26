@@ -18,7 +18,7 @@ Live Site: [https://sruthi-nair166.github.io/product-list/](https://sruthi-nair1
 
 ### Screenshots
 
-<img src="/public/screenshot.png" alt="hero section desktop" style="border: 1px solid grey">
+<img src="/product-list/public/screenshot.png" alt="hero section desktop" style="border: 1px solid grey">
 
 ### Overview
 
