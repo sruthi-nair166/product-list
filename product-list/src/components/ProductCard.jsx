@@ -42,7 +42,7 @@ function ProductCard({ product }) {
           <button
             type="button"
             onClick={() => console.log(product.name)}
-            className="rounded-lg bg-black text-white flex items-center justify-center px-4 h-8"
+            className="rounded-lg bg-teal-900 hover:bg-teal-600 transition text-white flex items-center justify-center px-4 h-8"
           >
             <span className="pt-1 pb-1.5">Add to Cart</span>
           </button>

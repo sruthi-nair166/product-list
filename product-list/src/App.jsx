@@ -121,7 +121,7 @@ const products = [
   {
     id: 12,
     name: "Smartphone - 128GB",
-    price: 431,
+    price: 11149,
     category: "Electronics & Gadgets",
     rating: 4.6,
     count: 320,

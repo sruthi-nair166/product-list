@@ -2,9 +2,14 @@ function Categories({ filter }) {
   return (
     <div id="popular" className="px-12 py-10">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-medium">Explore Popular Categories</h2>
+        <h2 className="text-xl font-medium text-teal-950">
+          Explore Popular Categories
+        </h2>
 
-        <a href="#" className="flex items-center gap-1 text-blue-600">
+        <a
+          href="#"
+          className="flex items-center gap-1 font-medium text-teal-800 hover:text-teal-600 transition"
+        >
           <span>View All</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

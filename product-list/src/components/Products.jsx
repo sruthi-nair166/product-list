@@ -14,6 +14,7 @@ function Products({
   const [isSortByOpen, setIsSortByOpen] = useState(false);
   const [isPriceOpen, setIsPriceOpen] = useState(false);
   const [isRatingOpen, setIsRatingOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   function priceSort(priceValue) {
     const productsArray =
@@ -43,10 +44,25 @@ function Products({
     }
   }
 
+  function applySearch(productsArray) {
+    if (searchQuery.trim() === "") return productsArray;
+
+    return productsArray.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
+  }
+
+  const searchedProducts =
+    searchQuery.trim() === ""
+      ? products
+      : products.filter((product) =>
+          product.name.toLowerCase().includes(searchQuery.toLowerCase()),
+        );
+
   return (
     <div id="products" className="px-12 py-6">
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-xl font-medium pb-8">
+        <h2 className="text-xl font-medium pb-8 text-teal-950">
           {filteredProducts.length > 0
             ? filteredProducts[0]?.category
             : "Top Deals"}
@@ -58,22 +74,26 @@ function Products({
               type="text"
               id="search"
               placeholder="Search Product"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="border-2 border-slate-300 rounded-md w-64 h-8 ps-2"
             />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="size-5 absolute top-1/2 -translate-y-1/2 end-2 text-slate-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-              />
-            </svg>
+            <button type="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                className="size-5 absolute top-1/2 -translate-y-1/2 end-2 text-slate-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </button>
           </div>
 
           <div className="relative">
@@ -83,7 +103,7 @@ function Products({
                 setIsFilterOpen(!isFilterOpen);
                 setIsSortByOpen(false);
               }}
-              className="flex items-center justify-center bg-black text-white border-0 rounded-md px-4 h-8 gap-1"
+              className="flex items-center justify-center bg-teal-900 hover:bg-teal-600 transition text-white border-0 rounded-md px-4 h-8 gap-1"
             >
               <span className="pt-1 pb-1.5">Filter</span>
               <svg
@@ -105,7 +125,7 @@ function Products({
             {isFilterOpen && (
               <div className="absolute end-0 z-10 border-2 rounded-lg bg-white">
                 <ul className="flex flex-col items-start w-52">
-                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
+                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2 text-teal-950">
                     <button
                       onClick={() => {
                         setIsFilterOpen(false);
@@ -117,7 +137,7 @@ function Products({
                       All
                     </button>
                   </li>
-                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
+                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2 text-teal-950">
                     <button
                       onClick={() => {
                         setIsFilterOpen(false);
@@ -129,7 +149,7 @@ function Products({
                       Electronics & Gadgets
                     </button>
                   </li>
-                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
+                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2 text-teal-950">
                     <button
                       onClick={() => {
                         setIsFilterOpen(false);
@@ -141,7 +161,7 @@ function Products({
                       Fashion & Apparel
                     </button>
                   </li>
-                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
+                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2 text-teal-950">
                     <button
                       onClick={() => {
                         setIsFilterOpen(false);
@@ -153,7 +173,7 @@ function Products({
                       Beauty & Personal Care
                     </button>
                   </li>
-                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2">
+                  <li className="hover:bg-slate-200 transition border-b-2 w-full px-4 py-2 text-teal-950">
                     <button
                       onClick={() => {
                         setIsFilterOpen(false);
@@ -165,7 +185,7 @@ function Products({
                       Home & Kitchen
                     </button>
                   </li>
-                  <li className="hover:bg-slate-200 transition w-full px-4 py-2">
+                  <li className="hover:bg-slate-200 transition w-full px-4 py-2 text-teal-950">
                     <button
                       onClick={() => {
                         setIsFilterOpen(false);
@@ -189,7 +209,7 @@ function Products({
                 setIsSortByOpen(!isSortByOpen);
                 setIsFilterOpen(false);
               }}
-              className="flex items-center justify-center border-2 border-slate-300 rounded-md ps-3 pe-2 h-8 gap-1"
+              className="flex items-center justify-center border-2 border-slate-300 rounded-md ps-3 pe-2 h-8 gap-1 text-teal-950 hover:bg-slate-200 transition"
             >
               <span className="pt-1 pb-1.5">Sort By</span>
               <svg
@@ -316,7 +336,7 @@ function Products({
         priceSortArray.length === 0 &&
         ratingSortArray.length === 0 && (
           <div className="grid grid-cols-4 gap-6">
-            {products.map((product) => (
+            {applySearch(products).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
@@ -326,7 +346,7 @@ function Products({
         priceSortArray.length === 0 &&
         ratingSortArray.length === 0 && (
           <div className="grid grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
+            {applySearch(filteredProducts).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
@@ -334,7 +354,7 @@ function Products({
 
       {priceSortArray.length > 0 && (
         <div className="grid grid-cols-4 gap-6">
-          {priceSortArray.map((product) => (
+          {applySearch(priceSortArray).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
@@ -342,10 +362,16 @@ function Products({
 
       {ratingSortArray.length > 0 && (
         <div className="grid grid-cols-4 gap-6">
-          {ratingSortArray.map((product) => (
+          {applySearch(ratingSortArray).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+      )}
+
+      {searchedProducts.length === 0 && (
+        <p className="text-center text-3xl text-slate-400 mt-12 mb-10">
+          No results found
+        </p>
       )}
     </div>
   );
