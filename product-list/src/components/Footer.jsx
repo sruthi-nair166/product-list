@@ -1,9 +1,12 @@
 function Footer() {
   return (
-    <div className="bg-slate-200 px-12 pt-10 pb-5 mt-14">
-      <div className="flex justify-between">
+    <div className="bg-slate-200 px-4 sm:px-6 lg:px-12 pt-10 pb-5 mt-14">
+      <div
+        className="flex flex-col items-center text-center gap-10
+                lg:flex-row lg:items-start lg:text-left lg:justify-between lg:gap-0"
+      >
         <div className="flex flex-col justify-between">
-          <p className="text-teal-600 font-extrabold flex items-center text-4xl gap-2">
+          <p className="text-teal-600 font-extrabold flex items-center lg:justify-start justify-center text-4xl gap-2 mb-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -20,7 +23,7 @@ function Footer() {
             </svg>
             <span>ShopLink</span>
           </p>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
               placeholder="Enter your Email"
@@ -35,8 +38,8 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex gap-16">
-          <div className="flex flex-col gap-3">
+        <div className="flex flex-col sm:flex-row sm:gap-8 lg:gap-16 lg:text-start text-center">
+          <div className="flex flex-col gap-3 sm:mb-0 mb-10">
             <h4 className="text-lg font-medium mb-3 text-teal-800">About</h4>
             <a href="#" className="text-teal-950">
               About Us
@@ -61,7 +64,7 @@ function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 sm:mb-0 mb-10">
             <h4 className="text-lg font-medium mb-3 text-teal-800">
               Quick Links
             </h4>
@@ -88,7 +91,7 @@ function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 sm:mb-0 mb-10">
             <h4 className="text-lg font-medium mb-3 text-teal-800">
               My Accounts
             </h4>
@@ -117,7 +120,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-14">
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-14 gap-4 sm:gap-0">
         <p className="text-teal-950">© Copyright 2025. All rights reserved.</p>
         <div className="flex gap-3">
           <a href="https://www.instagram.com/">

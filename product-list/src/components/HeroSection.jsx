@@ -1,6 +1,6 @@
 function HeroSection() {
   return (
-    <div className="h-[50vh] flex flex-col items-start justify-center bg-slate-200 px-12">
+    <div className="h-[50vh] flex flex-col sm:items-start items-center sm:text-start text-center justify-center bg-slate-200 px-12">
       <h1 className="text-5xl text-teal-800 font-medium pb-4">
         Discover Products You’ll Love
       </h1>

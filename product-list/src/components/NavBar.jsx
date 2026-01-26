@@ -1,7 +1,7 @@
 function NavBar() {
   return (
     <>
-      <nav className="flex justify-between px-12 py-4">
+      <nav className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-4">
         <div className="flex">
           <a
             href="#"
@@ -23,7 +23,7 @@ function NavBar() {
             </svg>
             <p>ShopLink</p>
           </a>
-          <ul className="flex items-center gap-6">
+          <ul className="hidden lg:flex items-center gap-6">
             <li>
               <a
                 href="#"
@@ -73,7 +73,7 @@ function NavBar() {
           </ul>
         </div>
 
-        <div className="flex gap-5">
+        <div className="hidden lg:flex gap-5">
           <a
             href="#"
             className="flex items-center gap-1 text-teal-950 hover:text-teal-600 transition"
@@ -116,6 +116,22 @@ function NavBar() {
             Sign In
           </a>
         </div>
+        <button className="lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="size-7 text-teal-950"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
       </nav>
     </>
   );

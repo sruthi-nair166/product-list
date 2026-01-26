@@ -1,6 +1,6 @@
 function ProductCard({ product }) {
   return (
-    <div className="relative border-2 rounded-2xl shadow-md pb-6">
+    <div className="relative border-2 rounded-2xl border-slate-200 shadow-md pb-6">
       <div className="w-full h-96 overflow-hidden flex justify-center items-center">
         <img
           className="object-contain p-4"

@@ -1,6 +1,6 @@
 function Categories({ filter }) {
   return (
-    <div id="popular" className="px-12 py-10">
+    <div id="popular" className="px-4 sm:px-6 lg:px-12 py-10">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-medium text-teal-950">
           Explore Popular Categories
@@ -28,7 +28,7 @@ function Categories({ filter }) {
         </a>
       </div>
 
-      <div className="grid grid-cols-5 gap-7 mt-5">
+      <div className="grid grid-cols sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-7 mt-5">
         <a
           href="#products"
           onClick={() => filter("Electronics & Gadgets")}
