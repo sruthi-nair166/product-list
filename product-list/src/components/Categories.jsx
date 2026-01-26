@@ -36,7 +36,7 @@ function Categories({ filter }) {
         >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
-            src="/electronics.jpg"
+            src="./electronics.jpg"
             alt="electronics & gadgets category"
           />
           <span className="absolute left-3 top-3 category-tag">
@@ -50,7 +50,7 @@ function Categories({ filter }) {
         >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
-            src="/fashion.png"
+            src="./fashion.png"
             alt="fashion & apparel category"
           />
           <span className="absolute left-3 top-3 category-tag">
@@ -64,7 +64,7 @@ function Categories({ filter }) {
         >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
-            src="/beauty.jpg"
+            src="./beauty.jpg"
             alt="beauty & personal care category"
           />
           <span className="absolute left-3 top-3 category-tag">
@@ -78,7 +78,7 @@ function Categories({ filter }) {
         >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
-            src="/kitchen.png"
+            src="./kitchen.png"
             alt="home & kitchen category"
           />
           <span className="absolute left-3 top-3 category-tag">
@@ -92,7 +92,7 @@ function Categories({ filter }) {
         >
           <img
             className="rounded-xl transition-transform duration-1000 hover:scale-125"
-            src="/fitness.png"
+            src="./fitness.png"
             alt="health & fitness category"
           />
           <span className="absolute left-3 top-3 category-tag">

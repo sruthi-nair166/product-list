@@ -124,13 +124,13 @@ function Footer() {
         <p className="text-teal-950">© Copyright 2025. All rights reserved.</p>
         <div className="flex gap-3">
           <a href="https://www.instagram.com/">
-            <img className="h-5" src="/instagram_logo.png" alt="" />
+            <img className="h-5" src="./instagram_logo.png" alt="" />
           </a>
           <a href="https://www.facebook.com/">
-            <img className="h-5" src="/facebook_icon.png" alt="" />
+            <img className="h-5" src="./facebook_icon.png" alt="" />
           </a>
           <a href="https://x.com/">
-            <img className="h-5" src="/Logo_of_Twitter.png" alt="" />
+            <img className="h-5" src="./Logo_of_Twitter.png" alt="" />
           </a>
         </div>
       </div>
