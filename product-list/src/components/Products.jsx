@@ -1,19 +1,53 @@
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 
-function Products({ products, filter, filteredProducts }) {
+function Products({
+  products,
+  filter,
+  filteredProducts,
+  priceSortArray,
+  setPriceSortArray,
+  ratingSortArray,
+  setRatingSortArray,
+}) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isSortByOpen, setIsSortByOpen] = useState(false);
   const [isPriceOpen, setIsPriceOpen] = useState(false);
   const [isRatingOpen, setIsRatingOpen] = useState(false);
 
-  console.log(filteredProducts);
+  function priceSort(priceValue) {
+    const productsArray =
+      filteredProducts.length > 0 ? filteredProducts : products;
+    setRatingSortArray([]);
+
+    if (priceValue === "high-low") {
+      const sorted = productsArray.slice().sort((a, b) => b.price - a.price);
+      setPriceSortArray(sorted);
+    } else if (priceValue === "low-high") {
+      const sorted = productsArray.slice().sort((a, b) => a.price - b.price);
+      setPriceSortArray(sorted);
+    }
+  }
+
+  function ratingSort(ratingValue) {
+    const productsArray =
+      filteredProducts.length > 0 ? filteredProducts : products;
+    setPriceSortArray([]);
+
+    if (ratingValue === "high-low") {
+      const sorted = productsArray.slice().sort((a, b) => b.rating - a.rating);
+      setRatingSortArray(sorted);
+    } else if (ratingValue === "low-high") {
+      const sorted = productsArray.slice().sort((a, b) => a.rating - b.rating);
+      setRatingSortArray(sorted);
+    }
+  }
 
   return (
     <div id="products" className="px-12 py-6">
       <div className="flex items-center justify-between gap-4">
         <h2 className="text-xl font-medium pb-8">
-          {filteredProducts.length
+          {filteredProducts.length > 0
             ? filteredProducts[0]?.category
             : "Top Deals"}
         </h2>
@@ -203,11 +237,23 @@ function Products({ products, filter, filteredProducts }) {
                   {isPriceOpen && (
                     <ul>
                       <li className="flex gap-1 w-full ps-5 py-2">
-                        <input type="checkbox" id="price-high-to-low" />
+                        <input
+                          onChange={() => priceSort("high-low")}
+                          type="radio"
+                          name="select"
+                          value="high-low"
+                          id="price-high-to-low"
+                        />
                         <label htmlFor="price-high-to-low">High to Low</label>
                       </li>
                       <li className="flex gap-1 w-full ps-5 py-2">
-                        <input type="checkbox" id="price-low-to-high" />
+                        <input
+                          onChange={() => priceSort("low-high")}
+                          type="radio"
+                          name="select"
+                          value="low-high"
+                          id="price-low-to-high"
+                        />
                         <label htmlFor="price-low-to-high">Low to High</label>
                       </li>
                     </ul>
@@ -238,11 +284,23 @@ function Products({ products, filter, filteredProducts }) {
                   {isRatingOpen && (
                     <ul>
                       <li className="flex gap-1 w-full ps-5 py-2">
-                        <input type="checkbox" id="rating-high-to-low" />
+                        <input
+                          onChange={() => ratingSort("high-low")}
+                          type="radio"
+                          name="select"
+                          value="high-low"
+                          id="rating-high-to-low"
+                        />
                         <label htmlFor="rating-high-to-low">High to Low</label>
                       </li>
                       <li className="flex gap-1 w-full ps-5 py-2">
-                        <input type="checkbox" id="rating-low-to-high" />
+                        <input
+                          onChange={() => ratingSort("low-high")}
+                          type="radio"
+                          name="select"
+                          value="low-high"
+                          id="rating-low-to-high"
+                        />
                         <label htmlFor="rating-low-to-high">Low to High</label>
                       </li>
                     </ul>
@@ -254,17 +312,37 @@ function Products({ products, filter, filteredProducts }) {
         </div>
       </div>
 
-      {!filteredProducts.length && (
+      {filteredProducts.length === 0 &&
+        priceSortArray.length === 0 &&
+        ratingSortArray.length === 0 && (
+          <div className="grid grid-cols-4 gap-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+
+      {filteredProducts.length > 0 &&
+        priceSortArray.length === 0 &&
+        ratingSortArray.length === 0 && (
+          <div className="grid grid-cols-4 gap-6">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+
+      {priceSortArray.length > 0 && (
         <div className="grid grid-cols-4 gap-6">
-          {products.map((product) => (
+          {priceSortArray.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       )}
 
-      {filteredProducts.length && (
+      {ratingSortArray.length > 0 && (
         <div className="grid grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
+          {ratingSortArray.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

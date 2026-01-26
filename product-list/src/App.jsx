@@ -131,13 +131,17 @@ const products = [
 
 function App() {
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [priceSortArray, setPriceSortArray] = useState([]);
+  const [ratingSortArray, setRatingSortArray] = useState([]);
 
   function filter(value) {
     setFilteredProducts([]);
+    setPriceSortArray([]);
+    setRatingSortArray([]);
+
     products.filter((product) => {
       if (product.category === value) {
         setFilteredProducts((prev) => [...prev, product]);
-        console.log(filteredProducts);
       }
     });
   }
@@ -155,6 +159,10 @@ function App() {
           products={products}
           filter={filter}
           filteredProducts={filteredProducts}
+          priceSortArray={priceSortArray}
+          setPriceSortArray={setPriceSortArray}
+          ratingSortArray={ratingSortArray}
+          setRatingSortArray={setRatingSortArray}
         />
       </main>
 
