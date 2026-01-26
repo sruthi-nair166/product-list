@@ -15,6 +15,7 @@ import Product9 from "./assets/9.cleaning-supplies.jpg";
 import Product10 from "./assets/10.knee-pads.jpg";
 import Product11 from "./assets/11.perfume.jpg";
 import Product12 from "./assets/12.smartphone.jpg";
+import Footer from "./components/Footer";
 
 const products = [
   {
@@ -139,6 +140,10 @@ function App() {
         <Categories />
         <Products products={products} />
       </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

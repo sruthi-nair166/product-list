@@ -2,9 +2,9 @@ import Product1 from "../assets/1.moisturizer.jpg";
 
 function Products({ products }) {
   return (
-    <div className="px-12 py-6">
+    <div id="deals" className="px-12 py-6">
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-xl font-medium pb-4">Top Picks for you</h2>
+        <h2 className="text-xl font-medium pb-4">Top Deals</h2>
 
         <div className="flex gap-3 pb-4">
           <div className="relative">
@@ -41,7 +41,7 @@ function Products({ products }) {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-4"
+              className="size-4"
             >
               <path
                 stroke-linecap="round"
@@ -62,7 +62,7 @@ function Products({ products }) {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="size-5"
+              className="size-5"
             >
               <path
                 stroke-linecap="round"
@@ -92,10 +92,10 @@ function Products({ products }) {
             </p>
 
             <div className="px-6 pt-3">
-              <p className="flex items-start justify-between">
-                <span className="text-lg font-medium leading-snug">
+              <div className="flex items-start justify-between">
+                <h3 className="text-lg font-medium leading-snug">
                   {product.name}
-                </span>
+                </h3>
                 <span className="flex items-center justify-center text-yellow-500 gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -111,10 +111,10 @@ function Products({ products }) {
                       d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
                     />
                   </svg>
-                  <span>{product.rating}</span>
+                  <span className="font-medium">{product.rating}</span>
                   <span>({product.count})</span>
                 </span>
-              </p>
+              </div>
 
               <div className="flex justify-between items-center pt-5">
                 <p className="text-slate-500 text-lg font-medium">
@@ -122,6 +122,7 @@ function Products({ products }) {
                 </p>
                 <button
                   type="button"
+                  onClick={() => console.log(product.name)}
                   className="rounded-lg bg-black text-white flex items-center justify-center px-4 h-8"
                 >
                   <span className="pt-1 pb-1.5">Add to Cart</span>

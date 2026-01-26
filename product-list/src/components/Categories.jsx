@@ -1,6 +1,6 @@
 function Categories() {
   return (
-    <div className="px-12 py-10">
+    <div id="popular" className="px-12 py-10">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-medium">Explore Popular Categories</h2>
 
