@@ -43,3 +43,5 @@ The search functionality allows users to find products by name in real time. The
 ## Acknowledgments
 
 This project was built as part of an assignment in the Full Stack Development course I'm currently enrolled in, offered by Entri Elevate. Special thanks to the course instructors and materials for the guidance and support.
+
+To build a realistic shopping experience, the product listings, pricing, and metadata were sourced from the [Free eCommerce Products API](https://kolzsticks.github.io/Free-Ecommerce-Products-Api/).
